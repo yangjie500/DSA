@@ -20,7 +20,7 @@ function _pivot(arr, start=0, end=arr.length - 1) {
   return pivotIndex;
 
 }
-
+//
 //console.log(_pivot([4, 2, 1, 3]))
 
 function quickSort(arr, left=0, right=arr.length-1) {

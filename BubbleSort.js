@@ -35,4 +35,4 @@ function optimizedBubbleSort(arr) {
 
 
 //console.log(bubbleSort([1,6,2,7,9,10,15,3,26,23,8,13,16]))
-console.log(optimizedBubbleSort([1,2,3,4,7,5,8,9,10]))
+console.log(optimizedBubbleSort([1,2,3,4,7,5,8,9,10]))//

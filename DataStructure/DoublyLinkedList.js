@@ -140,7 +140,7 @@ DLL.push(10)
 DLL.push(15)
 DLL.unshift(0)
 DLL.push(20)
-#DLL.remove()
+
 
 console.log(DLL.get(0))
 

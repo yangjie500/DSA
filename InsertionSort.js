@@ -42,4 +42,4 @@ function insertionSortAns(arr) {
 }
 
 console.log(insertionSort([19, 44, 38, 5, 47, 15]));
-console.log(insertionSortAns([19, 44, 38, 5, 47, 15]));
+console.log(insertionSortAns([19, 44, 38, 5, 47, 15]));//

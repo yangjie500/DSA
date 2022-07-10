@@ -31,6 +31,6 @@ function naiveStringSearchAnswer(long, short) {
   }
   return match;
 }
-
+//
 console.log(naiveStringSearchAnswer("lori loled loled", "loled "))
 
