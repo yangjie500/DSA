@@ -117,8 +117,8 @@ class DoublyLinkedList {
 
   remove(index) {
     if (index < 0 || index >= this.length) return false
-    if (index === 0) {this.shift(); return true}
-    if (index === this.length) {this.pop; return true}
+    if (index === 0) {return this.shift();}
+    if (index === this.length -1 ) {return this.pop();}
     const removeNode = this.get(index)
     const prevNode = removeNode.prev
     const nextNode = removeNode.next
@@ -129,7 +129,7 @@ class DoublyLinkedList {
     removeNode.prev = null
 
     this.length--;
-    return true
+    return removeNode
   }
 }
 
@@ -140,9 +140,10 @@ DLL.push(10)
 DLL.push(15)
 DLL.unshift(0)
 DLL.push(20)
+DLL.remove(1)
 
 
-console.log(DLL.get(0))
+console.log(DLL.head.next)
 
 
 
