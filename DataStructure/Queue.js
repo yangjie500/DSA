@@ -10,47 +10,47 @@ class Node {
     this.next = null
   }
 }
-// Remember removing from the end, not O(1)
-// That why push and pop is opposite of SLL
-class Stack {
+
+class Queue {
   constructor() {
-    this.first = null;
-    this.last = null;
-    this.size = 0;
+    this.first = null
+    this.last = null
+    this.size = 0
   }
 
-  push(val) {
+  enqueue(val) {
     const newNode = new Node(val)
     if (!this.first) {
       this.first = newNode
       this.last = newNode
     } else {
-      const tempNode = this.first
-      this.first = newNode
-      this.first.next = tempNode
+      this.last.next = newNode;
+      this.last = newNode
     }
-    return ++this.size;
+
+    return ++this.size
   }
 
-  pop() {
+  dequeue() {
     if (!this.first) return null
     const removeNode = this.first
-    if (this.size === 1) {
+    if (this.first === this.last) {
       this.last = null
     }
     this.first = this.first.next
     this.size--;
     return removeNode
+
   }
+
 }
 
-const stack = new Stack();
-stack.push(1)
-stack.push(2)
-stack.push(3)
-stack.pop()
-stack.pop()
-stack.pop()
+const queue = new Queue()
+queue.enqueue(1)
+queue.enqueue(2)
+queue.enqueue(3)
+queue.dequeue()
+queue.dequeue()
+queue.dequeue()
 
-console.log(stack)
-
+console.log(queue)
