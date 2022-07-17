@@ -1,11 +1,11 @@
-const { BinarySearchTree} = require('./BinarySearchTree')
+const { BinarySearchTree } = require('./BinarySearchTree')
 
-class BFS extends BinarySearchTree{
+class TreeTraversal extends BinarySearchTree{
   constructor() {
     super()
   }
 
-  search() {
+  BFS() {
     const queue = []
     const visited = []
 
@@ -21,9 +21,45 @@ class BFS extends BinarySearchTree{
 
     return visited
   }
+
+  DFSPreOrder() {
+    const data = []
+    const currNode = this.root
+    function traverse(node) {
+      data.push(node.val)
+      if (node.left) traverse(node.left)
+      if (node.right) traverse(node.right)
+    }
+    traverse(currNode)
+    return data
+  }
+
+  DFSPostOrder() {
+    const data = []
+    const currNode = this.root
+    function traverse(node) {
+      if (node.left) traverse(node.left)
+      if (node.right) traverse(node.right)
+      data.push(node.val)
+    }
+    traverse(currNode)
+    return data
+  }
+
+  DFSInOrder() {
+    const data = []
+    const currNode = this.root
+    function traverse(node) {
+      if (node.left) traverse(node.left)
+      data.push(node.val)
+      if (node.right) traverse(node.right)
+    }
+    traverse(currNode)
+    return data
+  }
 }
 
-tree = new BFS()
+tree = new TreeTraversal()
 
 /*
         10
@@ -38,5 +74,6 @@ tree.insert(3)
 tree.insert(8)
 tree.insert(20)
 
-console.log(tree.search())
-
+console.log(tree.DFSPreOrder())
+console.log(tree.DFSPostOrder())
+console.log(tree.DFSInOrder())
