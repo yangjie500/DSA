@@ -1,3 +1,7 @@
+// Insertion: O(log n)
+// Removal: O(log n)
+// Search : O(n)
+
 // 2n + 1 and 2n + 2
 // (n - 1) // 2
 
